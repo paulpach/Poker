@@ -28,5 +28,14 @@ class CardTest {
 		Card card = new Card(10, CardType.DIAMONDS);
 		
 		assertEquals(CardType.DIAMONDS, card.getType());
-	}
+    }
+    
+    @Test
+    public void TestEquals()
+    {
+        Card card1 = new Card(10, CardType.DIAMONDS);
+        Card card2 = new Card(10, CardType.DIAMONDS);
+
+        assertEquals(card1, card2);
+    }
 }
