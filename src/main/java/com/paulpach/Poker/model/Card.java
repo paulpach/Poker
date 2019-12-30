@@ -8,7 +8,8 @@ public class Card {
 	private CardType cardType;
 	
 	public Card (Integer id, CardType cardType) {
-		this.id = id;
+        this.id = id;
+        this.cardType = cardType;
 	}
 	
 	public Integer getValue() {
@@ -17,6 +18,6 @@ public class Card {
     
     public CardType getType()
     {
-        return CardType.CLUBS;
+        return cardType;
     }
 }
