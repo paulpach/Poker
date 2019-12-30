@@ -17,10 +17,16 @@ class CardTest {
 	}
 	
 	@Test
-	public void TestCardType() {
+	public void TestCardTypeOne() {
 		Card card = new Card(10, CardType.CLUBS);
 		
 		assertEquals(CardType.CLUBS, card.getType());
 	}
 	
+	@Test
+	public void TestCardTypeTwo() {
+		Card card = new Card(10, CardType.DIAMONDS);
+		
+		assertEquals(CardType.DIAMONDS, card.getType());
+	}
 }
