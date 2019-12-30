@@ -8,7 +8,11 @@ public class Card {
 	private CardType cardType;
 	
 	public Card (Integer id, CardType cardType) {
-		
+		this.id = id;
+	}
+	
+	public Integer getValue() {
+		return this.id;
 	}
 	
 }
