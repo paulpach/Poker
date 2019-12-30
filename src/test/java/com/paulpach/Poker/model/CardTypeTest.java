@@ -1,4 +1,4 @@
-package com.paulpach.Poker;
+package com.paulpach.Poker.model;
 
 import org.junit.jupiter.api.Test;
 
