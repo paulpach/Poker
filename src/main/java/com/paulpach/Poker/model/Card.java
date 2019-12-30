@@ -20,4 +20,19 @@ public class Card {
     {
         return cardType;
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+    	Card card = null;
+    	
+    	if(obj instanceof Card)
+    		card = (Card)obj;
+    	
+    	if(card != null) {
+    		if(this.id == card.getValue() && this.cardType == card.getType())
+    			return true;
+    	}
+    	
+    	return false;
+    }
 }
