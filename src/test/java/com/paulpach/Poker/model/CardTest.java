@@ -3,7 +3,7 @@ package com.paulpach.Poker.model;
 import com.paulpach.Poker.model.enums.CardType;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
 
