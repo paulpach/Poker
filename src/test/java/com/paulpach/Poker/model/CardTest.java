@@ -16,4 +16,11 @@ class CardTest {
         assertEquals(10, card.getValue());
 	}
 	
+	@Test
+	public void TestCardType() {
+		Card card = new Card(10, CardType.CLUBS);
+		
+		assertEquals(CardType.CLUBS, card.getType());
+	}
+	
 }
