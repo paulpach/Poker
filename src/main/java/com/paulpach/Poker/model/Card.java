@@ -14,5 +14,9 @@ public class Card {
 	public Integer getValue() {
 		return this.id;
 	}
-	
+    
+    public CardType getType()
+    {
+        return CardType.CLUBS;
+    }
 }
