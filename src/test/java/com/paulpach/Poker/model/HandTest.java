@@ -32,7 +32,7 @@ public class HandTest {
 	}
 	
 	@Test
-	public void HandCardsCorrectType() {
+	public void HandCardsEquals() {
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(2, CardType.DIAMONDS);
 		Card card3 = new Card(3, CardType.HEARTS);
@@ -41,11 +41,11 @@ public class HandTest {
 		
 		Hand hand = new Hand(card1, card2, card3, card4, card5);
 		
-		assertEquals(Card.class, hand.getCard1().getClass());
-		assertEquals(Card.class, hand.getCard2().getClass());
-		assertEquals(Card.class, hand.getCard3().getClass());
-		assertEquals(Card.class, hand.getCard4().getClass());
-		assertEquals(Card.class, hand.getCard5().getClass());
+		assertEquals(card1, hand.getCard1());
+		assertEquals(card2, hand.getCard2());
+		assertEquals(card3, hand.getCard3());
+		assertEquals(card4, hand.getCard4());
+		assertEquals(card5, hand.getCard5());
 	}
 	
 }
