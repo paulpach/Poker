@@ -1,4 +1,4 @@
-package com.paulpach.Poker.model;
+package com.paulpach.Poker.model.enums;
 
 import org.junit.jupiter.api.Test;
 
