@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Test;
 import com.paulpach.Poker.model.Card;
 import com.paulpach.Poker.model.Hand;
 import com.paulpach.Poker.model.enums.CardType;
+import com.paulpach.Poker.model.enums.Rank;
 
 public class CardServiceTest {
 
 	@Test
 	public void HighCardTest() {
-        CardService cardService;
+        CardService cardService = new CardService();
 
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(12, CardType.DIAMONDS);
