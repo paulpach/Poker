@@ -22,7 +22,7 @@ public class CardServiceTest {
 		
 		Hand hand = new Hand(card1, card2, card3, card4, card5);
         
-        Rank rank = cardService.GetRank(hand);
+        Rank rank = cardService.getRank(hand);
 
         assertEquals(Rank.HighCard, rank, "This hand's rank is 'high card'");
 	}
