@@ -7,7 +7,7 @@ public class CardService {
 
 	public Rank getRank(Hand hand) {
 
-		boolean hasPair = false;
+		int pairAmount = 0;
 
 		int[] cardValueArray = new int[13];
 
@@ -23,10 +23,12 @@ public class CardService {
 
 		for (int i = 0; i < cardValueArray.length; i++) {
 			if (cardValueArray[i] == 2)
-				hasPair = true;
+				pairAmount++;
 		}
 
-		if (hasPair)
+		if (pairAmount == 2)
+			return Rank.TWO_PAIR;
+		else if (pairAmount == 1)
 			return Rank.PAIR;
 		else
 			return Rank.HIGHCARD;
