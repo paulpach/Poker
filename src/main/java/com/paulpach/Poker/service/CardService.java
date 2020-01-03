@@ -7,15 +7,11 @@ import com.paulpach.Poker.model.enums.Rank;
 
 public class CardService {
 
-	public Rank getRank(Hand hand) {
 
-		int pairAmount = 0;
-		boolean hasTrio = false;
-		int sequenceCounter = 0;
-
-		int[] cardValueArray = new int[13];
-		int[] handCardValueArray = new int[5];
-
+    /** Count how many of each card we have */
+    private int[] countCards(Hand hand)
+    {
+        int[] cardValueArray = new int[13];
 		cardValueArray[hand.getCard1().getValue() - 1]++;
 
 		cardValueArray[hand.getCard2().getValue() - 1]++;
@@ -24,7 +20,19 @@ public class CardService {
 
 		cardValueArray[hand.getCard4().getValue() - 1]++;
 
-		cardValueArray[hand.getCard5().getValue() - 1]++;
+        cardValueArray[hand.getCard5().getValue() - 1]++;
+        return cardValueArray;
+    }
+
+	public Rank getRank(Hand hand) {
+
+		int pairAmount = 0;
+		boolean hasTrio = false;
+		int sequenceCounter = 0;
+
+		int[] handCardValueArray = new int[5];
+
+        int[] cardValueArray = countCards(hand);
 
 		for (int i = 0; i < cardValueArray.length; i++) {
 			if (cardValueArray[i] == 2)
