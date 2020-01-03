@@ -8,6 +8,7 @@ public class CardService {
 	public Rank getRank(Hand hand) {
 
 		int pairAmount = 0;
+		boolean hasTrio = false;
 
 		int[] cardValueArray = new int[13];
 
@@ -24,9 +25,14 @@ public class CardService {
 		for (int i = 0; i < cardValueArray.length; i++) {
 			if (cardValueArray[i] == 2)
 				pairAmount++;
+			
+			if(cardValueArray[i] == 3)
+				hasTrio = true;
 		}
 
-		if (pairAmount == 2)
+		if(hasTrio)
+			return Rank.THREE_OF_A_KIND;
+		else if (pairAmount == 2)
 			return Rank.TWO_PAIR;
 		else if (pairAmount == 1)
 			return Rank.PAIR;
