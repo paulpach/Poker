@@ -28,9 +28,6 @@ public class CardService {
 
 		int pairAmount = 0;
 		boolean hasTrio = false;
-		int sequenceCounter = 0;
-
-		
 
         int[] cardValueArray = countCards(hand);
 
@@ -42,8 +39,22 @@ public class CardService {
 				hasTrio = true;
         }
         
+		if(isStraight(hand))
+			return Rank.STRAIGHT;
+		else if (hasTrio)
+			return Rank.THREE_OF_A_KIND;
+		else if (pairAmount == 2)
+			return Rank.TWO_PAIR;
+		else if (pairAmount == 1)
+			return Rank.PAIR;
+		else
+			return Rank.HIGHCARD;
+	}
+
+    private boolean isStraight(Hand hand) {
         int[] handCardValueArray = getCardValues(hand);
-		
+        int sequenceCounter = 0;
+        
 		Arrays.sort(handCardValueArray);
 		
 		int lastValue = 0;
@@ -56,18 +67,8 @@ public class CardService {
 			
 			lastValue = handCardValueArray[i];
 		}
-
-		if(sequenceCounter == 5)
-			return Rank.STRAIGHT;
-		else if (hasTrio)
-			return Rank.THREE_OF_A_KIND;
-		else if (pairAmount == 2)
-			return Rank.TWO_PAIR;
-		else if (pairAmount == 1)
-			return Rank.PAIR;
-		else
-			return Rank.HIGHCARD;
-	}
+        return sequenceCounter == 5;
+    }
 
     private int[] getCardValues(Hand hand) {
         int[] handCardValueArray = new int[5];
