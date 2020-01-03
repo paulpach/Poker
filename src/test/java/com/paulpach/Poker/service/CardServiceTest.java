@@ -25,7 +25,7 @@ public class CardServiceTest {
         
         Rank rank = cardService.getRank(hand);
 
-        assertEquals(Rank.HighCard, rank, "This hand's rank is 'high card'");
+        assertEquals(Rank.HIGHCARD, rank, "This hand's rank is 'high card'");
     }
     
 	@Test
@@ -42,7 +42,7 @@ public class CardServiceTest {
         
         Rank rank = cardService.getRank(hand);
 
-        assertEquals(Rank.Pair, rank, "There are 2 aces, this should be a Pair");
+        assertEquals(Rank.PAIR, rank, "There are 2 aces, this should be a Pair");
 	}
 	
 }
