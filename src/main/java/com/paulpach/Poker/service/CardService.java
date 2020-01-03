@@ -30,7 +30,7 @@ public class CardService {
 		boolean hasTrio = false;
 		int sequenceCounter = 0;
 
-		int[] handCardValueArray = new int[5];
+		
 
         int[] cardValueArray = countCards(hand);
 
@@ -40,13 +40,9 @@ public class CardService {
 
 			if (cardValueArray[i] == 3)
 				hasTrio = true;
-		}
-		
-		handCardValueArray[0] = hand.getCard1().getValue();
-		handCardValueArray[1] = hand.getCard2().getValue();
-		handCardValueArray[2] = hand.getCard3().getValue();
-		handCardValueArray[3] = hand.getCard4().getValue();
-		handCardValueArray[4] = hand.getCard5().getValue();
+        }
+        
+        int[] handCardValueArray = getCardValues(hand);
 		
 		Arrays.sort(handCardValueArray);
 		
@@ -72,5 +68,16 @@ public class CardService {
 		else
 			return Rank.HIGHCARD;
 	}
+
+    private int[] getCardValues(Hand hand) {
+        int[] handCardValueArray = new int[5];
+        
+		handCardValueArray[0] = hand.getCard1().getValue();
+		handCardValueArray[1] = hand.getCard2().getValue();
+		handCardValueArray[2] = hand.getCard3().getValue();
+		handCardValueArray[3] = hand.getCard4().getValue();
+		handCardValueArray[4] = hand.getCard5().getValue();
+        return handCardValueArray;
+    }
 
 }
