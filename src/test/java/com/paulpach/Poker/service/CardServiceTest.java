@@ -95,4 +95,21 @@ public class CardServiceTest {
         
         assertEquals(Rank.THREE_OF_A_KIND, rank, "There is 1 trio this hand should be 'Three of a Kind' rank");
     }
+    
+    @Test
+    public void StraightTest() {
+    	CardService cardService = new CardService();
+
+		Card card1 = new Card(3, CardType.CLUBS);
+		Card card2 = new Card(4, CardType.DIAMONDS);
+		Card card3 = new Card(5, CardType.HEARTS);
+		Card card4 = new Card(6, CardType.SPADES);
+		Card card5 = new Card(7, CardType.CLUBS);
+		
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+        
+        Rank rank = cardService.getRank(hand);
+        
+        assertEquals(Rank.STRAIGHT, rank, "There one full sequence, this hand should be 'Straight' rank");
+    }
 }

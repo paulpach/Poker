@@ -25,12 +25,12 @@ public class CardService {
 		for (int i = 0; i < cardValueArray.length; i++) {
 			if (cardValueArray[i] == 2)
 				pairAmount++;
-			
-			if(cardValueArray[i] == 3)
+
+			if (cardValueArray[i] == 3)
 				hasTrio = true;
 		}
 
-		if(hasTrio)
+		if (hasTrio)
 			return Rank.THREE_OF_A_KIND;
 		else if (pairAmount == 2)
 			return Rank.TWO_PAIR;
