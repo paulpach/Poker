@@ -78,4 +78,21 @@ public class CardServiceTest {
         
         assertEquals(Rank.TWO_PAIR, rank, "There are 2 pairs this hand should be 'Two Pairs' rank");
     }
+    
+    @Test
+    public void ThreeOfAKindTest() {
+    	CardService cardService = new CardService();
+
+		Card card1 = new Card(1, CardType.CLUBS);
+		Card card2 = new Card(1, CardType.DIAMONDS);
+		Card card3 = new Card(5, CardType.HEARTS);
+		Card card4 = new Card(5, CardType.SPADES);
+		Card card5 = new Card(5, CardType.CLUBS);
+		
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+        
+        Rank rank = cardService.getRank(hand);
+        
+        assertEquals(Rank.THREE_OF_A_KIND, rank, "There is 1 trio this hand should be 'Three of a Kind' rank");
+    }
 }
