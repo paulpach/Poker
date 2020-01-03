@@ -1,5 +1,7 @@
 package com.paulpach.Poker.service;
 
+import java.util.Arrays;
+
 import com.paulpach.Poker.model.Hand;
 import com.paulpach.Poker.model.enums.Rank;
 
@@ -9,8 +11,10 @@ public class CardService {
 
 		int pairAmount = 0;
 		boolean hasTrio = false;
+		int sequenceCounter = 0;
 
 		int[] cardValueArray = new int[13];
+		int[] handCardValueArray = new int[5];
 
 		cardValueArray[hand.getCard1().getValue() - 1]++;
 
@@ -29,8 +33,29 @@ public class CardService {
 			if (cardValueArray[i] == 3)
 				hasTrio = true;
 		}
+		
+		handCardValueArray[0] = hand.getCard1().getValue();
+		handCardValueArray[1] = hand.getCard2().getValue();
+		handCardValueArray[2] = hand.getCard3().getValue();
+		handCardValueArray[3] = hand.getCard4().getValue();
+		handCardValueArray[4] = hand.getCard5().getValue();
+		
+		Arrays.sort(handCardValueArray);
+		
+		int lastValue = 0;
+		
+		for(int i = 0; i < handCardValueArray.length; i++) {
+			if(i == 0)
+				sequenceCounter = 1;
+			else if(handCardValueArray[i] == lastValue + 1)
+				sequenceCounter++;
+			
+			lastValue = handCardValueArray[i];
+		}
 
-		if (hasTrio)
+		if(sequenceCounter == 5)
+			return Rank.STRAIGHT;
+		else if (hasTrio)
 			return Rank.THREE_OF_A_KIND;
 		else if (pairAmount == 2)
 			return Rank.TWO_PAIR;
