@@ -9,7 +9,7 @@ public class CardService {
 
 		boolean hasPair = false;
 
-		int[] cardValueArray = new int[12];
+		int[] cardValueArray = new int[13];
 
 		cardValueArray[hand.getCard1().getValue() - 1]++;
 
