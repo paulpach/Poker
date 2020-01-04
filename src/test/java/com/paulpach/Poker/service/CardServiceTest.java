@@ -13,7 +13,7 @@ public class CardServiceTest {
 
 	@Test
 	public void HighCardTest() {
-        CardService cardService = new CardService();
+        CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(12, CardType.DIAMONDS);
@@ -30,7 +30,7 @@ public class CardServiceTest {
     
 	@Test
 	public void PairTest() {
-        CardService cardService = new CardService();
+        CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(1, CardType.DIAMONDS);
@@ -47,7 +47,7 @@ public class CardServiceTest {
     
     @Test
 	public void KingPairTest() {
-        CardService cardService = new CardService();
+        CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(13, CardType.CLUBS);
 		Card card2 = new Card(13, CardType.DIAMONDS);
@@ -64,7 +64,7 @@ public class CardServiceTest {
     
     @Test
     public void TwoPairTest() {
-    	CardService cardService = new CardService();
+    	CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(1, CardType.DIAMONDS);
@@ -81,7 +81,7 @@ public class CardServiceTest {
     
     @Test
     public void ThreeOfAKindTest() {
-    	CardService cardService = new CardService();
+    	CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(1, CardType.CLUBS);
 		Card card2 = new Card(1, CardType.DIAMONDS);
@@ -98,7 +98,7 @@ public class CardServiceTest {
     
     @Test
     public void StraightTest() {
-    	CardService cardService = new CardService();
+    	CardServiceImpl cardService = new CardServiceImpl();
 
 		Card card1 = new Card(3, CardType.CLUBS);
 		Card card2 = new Card(4, CardType.DIAMONDS);
