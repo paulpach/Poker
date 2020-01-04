@@ -5,7 +5,7 @@ import java.util.Arrays;
 import com.paulpach.Poker.model.Hand;
 import com.paulpach.Poker.model.enums.Rank;
 
-public class CardService {
+public class CardServiceImpl {
 
 
     /** Count how many of each card we have */
