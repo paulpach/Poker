@@ -5,11 +5,11 @@ import java.util.Arrays;
 import com.paulpach.Poker.model.Hand;
 import com.paulpach.Poker.model.enums.Rank;
 
-public class CardServiceImpl {
+public class CardServiceImpl implements ICardService {
 
 
     /** Count how many of each card we have */
-    private int[] countCards(Hand hand)
+    public int[] countCards(Hand hand)
     {
         int[] cardValueArray = new int[13];
 		cardValueArray[hand.getCard1().getValue() - 1]++;
